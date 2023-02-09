@@ -2,6 +2,14 @@
   $(document).ready(function() {
      $('#before').val('');
      $('#after').val('');
+	  
+     $('#copyBtn').on("click", function () {
+         var content = document.getElementById('after');
+    
+      	$('#after').select();
+    	document.execCommand('copy'); 
+     });
+	  
   });
   
   function change(obj) {     
@@ -17,12 +25,3 @@
         }
     
   };
-  
-  function copy() {
-        var content = document.getElementById('after');
-    
-      	$('#after').select();
-    	document.execCommand('copy'); 
-		//console.log("계좌가 정상적으로 복사되었습니다.");
-    	//$('#after').blur();
-  }
